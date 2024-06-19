@@ -1,0 +1,230 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|d:\\asoft\\bt1\\baitap1tts\\webapplication1\\webapplication1\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\content\\user.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\user.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\views\\users\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\users\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\models\\crudmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\crudmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1ECF962F-2A9C-4D3F-83A7-932DDA390F02}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:05:37.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Users.cs",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Users.cs",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Models\\Users.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Users.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAEwE0AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T13:11:43.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:00:24.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Detail.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Users\\Detail.cshtml",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Detail.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Users\\Detail.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-16T13:03:18.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Users\\Index.cshtml",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Users\\Index.cshtml",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAiwC0BAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-17T03:08:08.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-14T08:09:00.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Edit.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Users\\Edit.cshtml",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Edit.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Users\\Edit.cshtml",
+              "ViewState": "AQIAABkAAAAAAAAAAAAvwCQAAABlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-16T15:27:19.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.css",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Content\\User.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\User.css",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Content\\User.css",
+              "RelativeToolTip": "WebApplication1\\Content\\User.css",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-14T08:15:12.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Delete.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Users\\Delete.cshtml",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Delete.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Users\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-16T13:02:37.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Site.css",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Content\\Site.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\Site.css",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Content\\Site.css",
+              "RelativeToolTip": "WebApplication1\\Content\\Site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAUwBEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-14T08:14:06.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Create.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Users\\Create.cshtml",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\Users\\Create.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Users\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-14T09:21:44.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-14T08:09:42.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CRUDModel.cs",
+              "DocumentMoniker": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Models\\CRUDModel.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\CRUDModel.cs",
+              "ToolTip": "D:\\Asoft\\BT1\\BaiTap1TTS\\WebApplication1\\WebApplication1\\Models\\CRUDModel.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\CRUDModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:30:46.171Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
