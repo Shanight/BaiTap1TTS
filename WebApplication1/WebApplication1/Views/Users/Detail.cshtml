@@ -1,0 +1,26 @@
+﻿@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Chi tiết";
+}
+
+<h2>Chi tiết</h2>
+
+<form id="frmDetail" method="post">
+    User ID: @Model.Rows[0]["UserID"]<br />
+    Enter Name: @Model.Rows[0]["UserName"]<br />
+    Enter Password: @Model.Rows[0]["Password"]<br />
+    Enter Email: @Model.Rows[0]["Email"]<br />
+    Enter Tel: @Model.Rows[0]["Tel"]<br />
+    Enter Disabled: @Model.Rows[0]["Disabled"]<br />
+
+    
+</form>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

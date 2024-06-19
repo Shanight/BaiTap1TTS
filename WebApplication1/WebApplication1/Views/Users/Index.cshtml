@@ -1,0 +1,407 @@
+﻿@model System.Data.DataTable
+@using System.Data
+@using System.Data.SqlClient
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .hiddenbutton {
+        display: none;
+        color: blue;
+    }
+
+    .showbutton {
+        display: block;
+    }
+</style>
+<link href="~/Content/User.css" rel="stylesheet" type="text/css" />
+
+<main>
+    <!--
+    <table border="1">
+        <tr>
+            <td><button>Thêm nhân viên</button></td>
+        </tr>
+        <tr>
+            <td>Mã nhân viên</td>
+            <td>Tên nhân viên</td>
+            <td>Email</td>
+            <td>Số điện thoại</td>
+            <td>Thực hiện</td>
+        </tr>
+    </table>
+    -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <button type="button" style="background-color: green; color:white;" class="btn" data-bs-toggle="modal"
+                        data-bs-target="#createUser" id="addButton">
+                    Thêm nhân viên
+                </button>
+            </div>
+        </div>
+
+        <form method="post" name="Display">
+            @{
+                if (Model.Rows.Count > 0)
+                {
+
+                    <div class="row head">
+                        <div class="col ColIndex headtext">Mã nhân viên</div>
+                        <div class="col ColIndex headtext">Tên nhân viên</div>
+                        <div class="col ColIndex headtext">Email</div>
+                        <div class="col ColIndex headtext">Số điện thoại</div>
+                        <div class="col ColIndex headtext">Thực hiện</div>
+                    </div>
+                    foreach (DataRow dr in Model.Rows)
+                    {
+                        <div class="row middle">
+                            @Html.ActionLink(@dr["UserID"].ToString(), "Detail", new { UserID = dr["UserID"].ToString() }, new
+                            {
+                            @class = "col ColIndex",
+                                @id = @dr["UserID"].ToString()
+                            })
+
+                            <div class="col ColIndex">@dr["UserName"]</div>
+                            <div class="col ColIndex">@dr["Email"]</div>
+                            <div class="col ColIndex">@dr["Tel"]</div>
+                            <div class="col ColIndex">
+
+
+                                @Html.ActionLink("Sửa", "Edit", new { UserID = dr["UserID"].ToString() }, new
+                                {
+                                @class =
+                                "buttonThongTin sua"
+                                })
+
+                                <button type="button" class="buttonThongTin xoa" data-bs-toggle="modal"
+                                        onclick="confirmBeforeDelete('@dr["UserID"]')">
+                                    Xóa
+                                </button>
+
+                            </div>
+                        </div>
+
+
+                    }
+
+                }
+                else
+                {
+                    <span>Không có dữ liệu!!</span>
+                }
+            }
+        </form>
+
+    </div>
+</main>
+
+<!--Bảng tạo tài khoản-->
+<div class="modal fade" id="createUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+     data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm nhân viên mới </h1>
+                <button class="btn-close" onclick="xoamatkhau()" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form id="frmDetail" method="post" action="@Url.Action("Create")">
+                    <label for="UserID">Mã nhân viên</label>
+                    <input class="form-control" id="UserID" type="text" name="UserID" style="text-transform:uppercase;"
+                           pattern="^\S+$" title="UserID không được chứa khoảng trắng" required />
+
+                    <label for="UserName">Tên nhân viên</label>
+                    <input class="form-control" id="UserName" type="text" name="UserName" required />
+
+                    <label for="Password1">Mật khẩu</label>
+                    <input class="form-control" type="password" name="Password1" id="Password1" required
+                           oninput="checkPasswordMatch()" />
+
+                    <label for="Password2">Nhập lại mật khẩu</label>
+                    <input class="form-control" type="password" name="Password2" id="Password2" required
+                           oninput="checkPasswordMatch()" />
+                    <input class="form-control" type="text" name="Password" id="Password" required hidden />
+
+                    <div id="passwordMatchMessage"></div>
+
+                    <label for="Email">Email</label>
+                    <input class="form-control" type="email" id="Email" name="Email" pattern="^\S+$"
+                           title="Email không được chứa khoảng trắng và đúng định dạng" required />
+
+                    <label for="Tel">Số điện thoại</label>
+                    <input class="form-control" id="SDT" type="tel" name="Tel" required />
+
+                    <label for="Disabled">Disabled</label>
+                    <input type="checkbox" id="Disabled" name="Disabled" value="1" />
+                    <br />
+
+
+                    
+                    <input type="button" class="buttonCreate hiddenbutton" value="Nhập tiếp" id="nhaptiep" onclick="xoaform()" />
+                    <input type="submit" id="createbutton" class="buttonCreate" value="Create" name="action" onclick="submitForm()" />
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Bảng tạo tài khoản-->
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <script>alert('Lỗi: Đã có User sử dụng ID này');</script>
+}
+
+
+<script>
+    document.getElementById("frmDetail").addEventListener("submit", function (event) {
+        event.preventDefault(); // Ngăn chặn hành vi mặc định khi submit form
+        submitForm(); // Gọi hàm xử lý gửi dữ liệu
+    });
+
+    function checkPasswordMatch() {
+        var password1 = document.getElementById("Password1").value;
+        var password2 = document.getElementById("Password2").value;
+        var passwordMatchMessage = document.getElementById("passwordMatchMessage");
+        if (password1 === password2) {
+            document.getElementById("Password").value = password2;
+            passwordMatchMessage.innerHTML = "Mật khẩu khớp.";
+            passwordMatchMessage.classList.remove("matkhaukhonggiong");
+            passwordMatchMessage.classList.add("matkhaugiong");
+        } else {
+            document.getElementById("Password").value = "";
+            passwordMatchMessage.innerHTML = "Mật khẩu không khớp, vui lòng kiểm tra lại.";
+            passwordMatchMessage.classList.remove("matkhaugiong");
+            passwordMatchMessage.classList.add("matkhaukhonggiong");
+        }
+    }
+
+    function xoamatkhau() {
+        document.getElementById("Password1").value = "";
+        document.getElementById("Password2").value = "";
+        document.getElementById("Password").value = "";
+    }
+
+    function confirmBeforeDelete(userId) {
+        var confirmUserId = prompt("Vui lòng xác nhận ID để xóa: " + userId);
+        if (confirmUserId == userId) {
+            var confirmation = confirm('Bạn có chắc muốn xóa?');
+            if (confirmation) {
+                // nếu chấp nhận sẽ đưa đến đường dẫn và xóa
+                window.location.href = '@Url.Action("Delete")?UserID=' + encodeURIComponent(confirmUserId);
+                return true;
+            } else {}
+        } else {
+            alert('Đã có lỗi xảy ra, vui lòng nhập lại.');
+            return false;
+        }
+    }
+
+
+    function confirmUpload() {
+        var userID = document.getElementsByName("UserID")[0].value;
+        var userName = document.getElementsByName("UserName")[0].value;
+        var password1 = document.getElementsByName("Password1")[0].value;
+        var password2 = document.getElementsByName("Password2")[0].value;
+        var email = document.getElementsByName("Email")[0].value;
+        var tel = document.getElementsByName("Tel")[0].value;
+        var disabled = document.getElementsByName("Disabled")[0].value;
+
+        if (userID === '' || userName === '' || password1 === '' || password2 === '' || email === '' || tel === '' || disabled === '') {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return false;
+        }
+
+        // Kiểm tra xem mật khẩu đã khớp hay chưa
+        if (password1 !== password2) {
+            alert("Mật khẩu không khớp");
+            return false;
+        }
+
+        // Kiểm tra UserID không có dấu cách
+        if (/\s/.test(userID)) {
+            alert("UserID không được chứa dấu cách");
+            return false;
+        }
+
+
+
+    // Gửi thông tin lên database
+        document.getElementById("frmDetail").submit();
+        document.getElementById("frmDetail").submit();
+
+
+    // Cài đặt localStorage để lần sau load lại trang sẽ nhấn nút, cho giá trị là true
+        localStorage.setItem("shouldOpenModal", "true");
+        localStorage.setItem("shouldOpenModalnhaptiep", "true");
+
+    return true;
+}
+    document.addEventListener("DOMContentLoaded", function() {
+        // Lấy giá trị localStorege từ lần trước
+        var shouldOpenModal = localStorage.getItem("shouldOpenModal");
+        var userID = localStorage.getItem("userID");
+        var userName = localStorage.getItem("userName");
+        var password1 = localStorage.getItem("password1");
+        var password2 = localStorage.getItem("password2");
+        var email = localStorage.getItem("email");
+        var tel = localStorage.getItem("Tel");
+        var disabled = localStorage.getItem("disabled");
+        if (shouldOpenModal === "true") {
+            var addButton = document.getElementById("addButton");
+            addButton.click();
+            // Sau khi load lại sẽ xóa
+            createbutton.classList.add("hiddenbutton");
+            localStorage.removeItem("shouldOpenModal");
+        };
+        // Kiểm tra nếu có trạng thái "loadlainhannut" trong localStorage
+        if (localStorage.getItem("loadlainhannut") === "true") {
+            var nhaptiep = document.getElementById("nhaptiep");
+
+            document.getElementById("UserID").value = userID;
+            document.getElementById("UserName").value = userName;
+            document.getElementById("Password1").value = password1;
+            document.getElementById("Password2").value = password2;
+            document.getElementById("Email").value = email;
+            document.getElementById("SDT").value = tel;
+            document.getElementById("Disabled").value = disabled;
+            nhaptiep.classList.remove("hiddenbutton");
+
+            // Xóa trạng thái "loadlainhannut" sau khi thêm class
+            localStorage.removeItem("loadlainhannut");
+            localStorage.removeItem("UserID");
+            localStorage.removeItem("UserName");
+            localStorage.removeItem("Password1");
+            localStorage.removeItem("Password2");
+            localStorage.removeItem("Email");
+            localStorage.removeItem("SDT");
+            localStorage.removeItem("Disabled");
+            alert("Thành công");
+
+        };
+
+        if (localStorage.getItem("shouldOpenModalnhaptiep") === "true") {
+            var nhaptiep = document.getElementById("nhaptiep");
+
+            nhaptiep.classList.remove("hiddenbutton");
+            // Xóa trạng thái "loadlainhannut" sau khi thêm class
+            localStorage.removeItem("shouldOpenModalnhaptiep");
+
+        }
+    });
+    function checkUserMatch() {
+        var user1 = document.getElementById("UserID1").value;
+        var usergoc = document.getElementById("UserIDgoc").value;
+        var hienthi = document.getElementById("hienthi");
+        if (user1 === usergoc) {
+            document.getElementById("IDUser").value = usergoc;
+            hienthi.innerHTML = "ID user khớp.";
+            hienthi.classList.remove("matkhaukhonggiong");
+            hienthi.classList.add("matkhaugiong");
+        } else {
+            document.getElementById("IDUser").value = "";
+            alert("ID user không khớp, vui lòng kiểm tra lại.");
+            hienthi.classList.remove("matkhaugiong");
+            hienthi.classList.add("matkhaukhonggiong");
+        }
+    }
+
+
+    /*
+    function submitForm() {
+        var userID = document.getElementsByName("UserID")[0].value;
+        var userName = document.getElementsByName("UserName")[0].value;
+        var password1 = document.getElementsByName("Password1")[0].value;
+        var password2 = document.getElementsByName("Password2")[0].value;
+        var email = document.getElementsByName("Email")[0].value;
+        var tel = document.getElementsByName("Tel")[0].value;
+        var disabled = document.getElementsByName("Disabled")[0].value;
+
+        if (userID === '' || userName === '' || password1 === '' || password2 === '' || email === '' || tel === '' || disabled === '') {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return false;
+        }
+
+        // Kiểm tra xem mật khẩu đã khớp hay chưa
+        if (password1 !== password2) {
+            alert("Mật khẩu không khớp");
+            return false;
+        }
+
+        // Kiểm tra UserID không có dấu cách
+        if (/\s/.test(userID)) {
+            alert("UserID không được chứa dấu cách");
+            return false;
+        }
+
+
+
+        // Gửi thông tin lên database
+        document.getElementById("frmDetail").submit();
+
+
+        // Cài đặt localStorage để lần sau load lại trang sẽ nhấn nút, cho giá trị là true
+        localStorage.setItem("loadlainhannut", "true");
+        localStorage.setItem("shouldOpenModal", "true");
+        localStorage.setItem("userID", userID);
+        localStorage.setItem("userName", userName);
+        localStorage.setItem("password1", password1);
+        localStorage.setItem("password2", password2);
+        localStorage.setItem("email", email);
+        localStorage.setItem("Tel", tel);
+        localStorage.setItem("disabled", disabled);
+        return true;
+    }
+    */
+    function xoaform() {
+        document.getElementById("UserID").value = "";
+        document.getElementById("UserName").value = "";
+        document.getElementById("Password1").value = "";
+        document.getElementById("Password2").value = "";
+        document.getElementById("Email").value = "";
+        document.getElementById("SDT").value = "";
+        document.getElementById("Disabled").value = "";
+    }
+    function submitForm() {
+        // Lấy dữ liệu từ các trường input
+        var userID = document.getElementById("UserID").value;
+        var userName = document.getElementById("UserName").value;
+        var password = document.getElementById("Password").value;
+        var password1 = document.getElementById("Password1").value;
+        var password2 = document.getElementById("Password2").value;
+        var email = document.getElementById("Email").value;
+        var tel = document.getElementById("SDT").value;
+        var isDisabled = document.getElementById("Disabled").value;
+
+        // Tạo một đối tượng FormData chứa dữ liệu form
+        var formData = new FormData();
+        formData.append("UserID", userID);
+        formData.append("UserName", userName);
+        formData.append("Password", password);
+        formData.append("Email", email);
+        formData.append("Tel", tel);
+        formData.append("Disabled", isDisabled);
+
+        if (userID === '' || userName === '' || password1 === '' || password2 === '' || email === '' || tel === '' ) {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return false;
+        }
+        // Gửi dữ liệu lên server bằng AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "@Url.Action("Create")"); // Địa chỉ URL xử lý gửi dữ liệu
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Xử lý phản hồi từ server khi gửi dữ liệu thành công
+                alert("Gửi dữ liệu thành công!");
+                nhaptiep.classList.remove("hiddenbutton");
+            } else {
+                // Xử lý phản hồi từ server khi gửi dữ liệu thất bại
+                alert("Đã xảy ra lỗi khi gửi dữ liệu.");
+            }
+        };
+        xhr.send(formData);
+    }
+</script>

@@ -1,0 +1,56 @@
+﻿.ColIndex {
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+}
+
+.buttonThongTin {
+	border: none;
+	border-radius: 5px;
+	width: 50%;
+	color: white;
+	height: 70%;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sua {
+	background-color: darkblue;
+}
+
+.xoa {
+	background-color: red;
+	
+	
+}
+
+.head {
+	height: 40px;
+	text-align: center;
+}
+
+.middle {
+	height: 55px;
+}
+
+.buttonCreate {
+	height: 40px;
+	background-color: rgb(36, 146, 189);
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+
+.headtext {
+	font-weight: 600;
+}
+
+.matkhaugiong {
+	color: green;
+}
+
+.matkhaukhonggiong {
+	color: red;
+}

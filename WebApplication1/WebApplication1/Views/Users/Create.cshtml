@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Models.Users
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+<form id="frmDetail" method="post" action="@Url.Action("Create")">
+    Enter UserID: <input name="UserID" /><br />
+    Enter UserName: <input name="UserName" /><br />
+    Enter Password: <input name="Password" /><br />
+    Enter Email: <input name="Email" /><br />
+    Enter Tel: <input name="Tel" /><br />
+    Enter Disabled: <input name="Disabled" /><br />
+
+
+    <input type="submit" value="Submit" name="action" />
+    <input type="submit" value="Cancel" name="action" />
+</form>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

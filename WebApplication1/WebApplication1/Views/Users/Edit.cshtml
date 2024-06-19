@@ -1,0 +1,68 @@
+﻿@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "EditView";
+}
+<style>
+    .matkhaugiong {
+        color: green;
+    }
+
+    .matkhaukhonggiong {
+        color: red;
+    }
+</style>
+<h2 style="text-align:center">Edit</h2>
+
+<form id="frmDetail" method="post" action="@Url.Action("Update")">
+    <label for="UserID">Nhập UserID để xác nhận sửa đổi:</label>
+    <input class="form-control" style="text-transform:uppercase;" name="UserID1" id="UserID1" style="text-transform:uppercase;" pattern="^\S+$" title="UserID không được chứa khoảng trắng" required />
+
+    <label for="UserName">Tên nhân viên</label>
+    <input class="form-control" type="text" name="UserName" required value="@Model.Rows[0]["UserName"]" />
+
+    <label for="Password1">Mật khẩu</label>
+    <input class="form-control" type="password" name="Password" id="Password" required
+           value="@Model.Rows[0]["Password"]" />
+
+    <label for="Email">Email</label>
+    <input class="form-control" type="email" name="Email" pattern="^\S+$"
+           title="Email không được chứa khoảng trắng và đúng định dạng" required value="@Model.Rows[0]["Email"]" />
+
+    <label for="Tel">Số điện thoại</label>
+    <input class="form-control" type="tel" name="Tel" required value="@Model.Rows[0]["Tel"]" />
+
+    <label for="Disabled">Disabled</label>
+    <input type="checkbox" name="Disabled"  @(Model.Rows[0]["Disabled"].ToString() == "1" ? "checked" : "") value="1" /><br />
+
+    <input type="text" name="UserIDgoc" id="UserIDgoc" value="@Model.Rows[0]["UserID"]" hidden />
+    <input type="text" name="UserID" id="IDUser" hidden required />
+    <input type="submit" value="Submit" name="action" onclick="checkUserMatch()" class="buttonCreate" />
+</form>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script>
+    function checkUserMatch() {
+        var user1 = document.getElementById("UserID1").value;
+        var usergoc = document.getElementById("UserIDgoc").value;
+        var hienthi = document.getElementById("hienthi");
+        if (user1 === usergoc) {
+            document.getElementById("IDUser").value = usergoc;
+            hienthi.innerHTML = "ID user khớp.";
+            hienthi.classList.remove("matkhaukhonggiong");
+            hienthi.classList.add("matkhaugiong");
+        } else {
+            document.getElementById("IDUser").value = "";
+            alert("ID user không khớp, vui lòng kiểm tra lại.");
+            hienthi.classList.remove("matkhaugiong");
+            hienthi.classList.add("matkhaukhonggiong");
+        }
+    }
+
+    
+</script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
